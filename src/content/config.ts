@@ -11,8 +11,17 @@ const policyCollection = defineCollection({
   }),
 });
 
+const frameworkCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 // 3. コレクションを登録するために、単一の`collections`オブジェクトをエクスポート
 //    このキーは、"src/content"のコレクションのディレクトリ名と一致する必要があります。
 export const collections = {
   'policy': policyCollection,
+  'framework': frameworkCollection,
 };
