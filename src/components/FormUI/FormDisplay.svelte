@@ -41,7 +41,7 @@
       return;
     }
 
-    formData.append('host', 'lifeis.money');
+    formData.append('host', 'wave.graphics');
 
     try {
       // fetch APIを使ってサーバーにPOSTリクエストを送信
