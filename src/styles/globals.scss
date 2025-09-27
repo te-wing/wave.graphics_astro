@@ -12,6 +12,7 @@
   --background: #8cd7ff;
   --background-transparent: rgb(140, 215, 255, 62%);
   --foreground: #222222;
+  --foregroundSub: #000000bb;
   --a-default: #3f48ffcb;
   --a-hover: #4d56ffa9;
   --button-background: #b8e5ff;
@@ -22,6 +23,7 @@
     --background: #000242;
     --background-transparent: rgb(0, 2, 66, 62%);
     --foreground: #fffff1df;
+    --foregroundSub: #fffff1a0;
     --a-default: #ffd6b0e7;
     --a-hover: #ffd52ddc;
     --button-background: #0044ff16;
@@ -59,4 +61,23 @@ a, p, h2, h3, h4, td, label, li {
 noscript {
   font-family: ZenMaru;
   font-size: 1em;
+}
+
+h2 {
+  text-align: center;
+}
+
+.subSlot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  p {
+    max-width: 707px;
+    color: var(--foregroundSub);
+  }
 }
