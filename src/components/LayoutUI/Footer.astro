@@ -1,5 +1,5 @@
 ---
-
+const buildYear = new Date().getFullYear();
 ---
 
 <footer>
@@ -8,30 +8,31 @@
     <p>コメント，記事のご要望など，管理者へのメッセージがありましたら，<a href="/form">アンケート</a>よりお教えください．</p>
     <p>コンテンツの著作権は，編集部及び編集者または明記された権利者に帰属します．</p>
     <p>サイトご利用時及び，コンテンツの転載・改変の際は，<a href="/policy">利用規約</a>もご覧ください．</p>
+    <p>&copy; {buildYear} <a href="https://wing.osaka/contact" target="_blank">Wing</a>.</p>
   </section>
 </footer>
 
 <style lang="scss">
-footer {
-  --shadow: #00000055;
-  @media (prefers-color-scheme: dark) {
-    --shadow: #fffff155;
-  }
+  footer {
+    --shadow: #00000055;
+    @media (prefers-color-scheme: dark) {
+      --shadow: #fffff155;
+    }
 
-  width: 100%;
-  box-shadow: 0px -4px 3px var(--shadow);
-  background-color: var(--background-transparent);
-  backdrop-filter: blur(1px);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  section {
-    margin: auto 8px;
+    width: 100%;
+    box-shadow: 0px -4px 3px var(--shadow);
+    background-color: var(--background-transparent);
+    backdrop-filter: blur(1px);
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    p {
-      text-align: center;
+
+    section {
+      margin: auto 8px;
+      box-sizing: border-box;
+      p {
+        text-align: center;
+      }
     }
   }
-}
 </style>
