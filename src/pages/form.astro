@@ -1,10 +1,12 @@
 ---
 import HeaderLayout from "../layouts/HeaderLayout.astro";
+
+import FormDisplay from '../components/FormUI/FormDisplay.svelte';
 ---
 
 <HeaderLayout
   title="アンケート | Wave Graphics"
   description="Wave Graphics Appに関する，アンケートにご協力をお願いいたします．"
 >
-
+  <FormDisplay client:load />
 </HeaderLayout>
