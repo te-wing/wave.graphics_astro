@@ -113,4 +113,8 @@
   input[type="radio"] {
     display: none;
   }
+
+  legend, input {
+    font-family: ZenMaru;
+  }
 </style>
