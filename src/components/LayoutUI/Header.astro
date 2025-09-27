@@ -26,7 +26,21 @@ header {
     align-items: baseline;
     h1 {
       font-family: Playwrite;
-
+      --gradientLeft: #02175c;
+      --gradientRight: #0072ff;
+      --gradientLeftHover: #02175cab;
+      --gradientRightHover: #0073ffab;
+      @media (prefers-color-scheme: dark) {
+        --gradientLeft: #00c6ff;
+        --gradientLeftHober: #00c6ffab;
+      }
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 29px;
+      background: linear-gradient(45deg, var(--gradientLeft), var(--gradientRight));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
     span {
       color: var(--foreground);
