@@ -1,0 +1,22 @@
+---
+import RootLayout from "./RootLayout.astro";
+
+import Footer from '../components/LayoutUI/Footer.astro';
+import Header from '../components/LayoutUI/Header.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+---
+
+<RootLayout
+  title={title}
+  description={description}
+>
+  <Header />
+  <slot />
+  <Footer />
+</RootLayout>
