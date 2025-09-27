@@ -7,7 +7,8 @@
     <h1>Wave</h1><span>.graphics</span>
   </a>
   <nav>
-    <a>Home</a>
+    <a href="/form">Form</a>
+    <a href="https://wing.osaka" target="_blank">Profile</a>
   </nav>
 </header>
 
@@ -21,8 +22,9 @@ header {
   height: 36px;
   background-color: var(--background-transparent);
   backdrop-filter: blur(3px);
-  padding: 0 10px;
+  padding: 0 14px;
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
 
   .waveTitle {
@@ -49,6 +51,11 @@ header {
     }
     span {
       color: var(--foreground);
+    }
+  }
+  nav {
+    a {
+      margin: auto  2px;
     }
   }
 }
