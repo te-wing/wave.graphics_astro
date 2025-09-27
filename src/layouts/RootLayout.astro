@@ -1,3 +1,34 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
+
+<!doctype HTML>
+<html lang='ja'>
+  <head>
+    // 基本情報から
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    // SEO対策とメタタグ
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    // Astro
+    <ClientRouter />
+  </head>
+  <body>
+    <slot transition:animate="fade" />
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/globals.scss";
+</style>
