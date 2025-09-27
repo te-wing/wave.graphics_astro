@@ -17,12 +17,14 @@ const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへよう�
   description={description}
 >
   <Header />
-  <div>
+  <div class='slotDiv'>
     <slot />
   </div>
   <Footer />
 </RootLayout>
 
 <style lang="scss">
-
+  .slotDiv {
+    margin-top: 40px;
+  }
 </style>
