@@ -3,6 +3,7 @@ import HeaderLayout from "../../layouts/HeaderLayout.astro";
 
 import { getCollection } from "astro:content";
 const policyEntries = await getCollection('policy');
+policyEntries.sort((a, b) => b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime()); // 日付順
 ---
 
 <HeaderLayout
