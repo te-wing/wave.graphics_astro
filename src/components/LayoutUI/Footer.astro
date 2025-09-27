@@ -3,7 +3,7 @@
 ---
 
 <footer>
-  <section class='footerBox'>
+  <section>
     <p class='footerContent'>&copy; 2025 Wing. Designed by <a href='https://wing.osaka' target='_blank'>wing.osaka</a>.</p>
   </section>
 </footer>
@@ -14,13 +14,12 @@ footer {
   box-shadow: 0 1px 7px var(--foreground);
   background-color: var(--background-transparent);
   backdrop-filter: blur(1px);
-}
-
-.footerBox {
-  margin-left: 15px;
-}
-
-p {
   margin: 0;
+  padding: 0;
+  section {
+    p {
+      text-align: center;
+    }
+  }
 }
 </style>
