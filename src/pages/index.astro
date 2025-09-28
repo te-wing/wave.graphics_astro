@@ -16,8 +16,12 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
   title="Wave Graphics App by Wing"
 >
   <section>
+    <h3>波の模型一覧</h3>
+    <p>スクロールして，さまざまな波の模型を見てみましょう．</p>
+    <a href="/wave">もっと見る</a>
+  </section>
+  <section>
     <h3>利用しているフレームワーク</h3>
-    <p>ここには一部のみ表示しています．全て見るには<a href="/framework">こちら</a>をクリック！</p>
     <ul>
       {firstFiveFrameworkEntries.map(frameworkEntry => (
         <li>
@@ -27,6 +31,7 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
         </li>
       ))}
     </ul>
+    <a href="/framework">もっと見る</a>
   </section>
   <section>
     <h3>アンケートとお問い合わせ</h3>
