@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import styles from './canvas.module.scss';
-import 'katex/dist/katex.min.css';
-import {InlineMath} from 'react-katex';
+import pkg from 'react-katex';
+const { InlineMath } = pkg;
 
 interface OscillationCanvasProps {
   initialAmplitude?: number;
