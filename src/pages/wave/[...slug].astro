@@ -29,6 +29,7 @@ const titleOnHeader = entry.data.title + " | Wave Graphics"
   <div class="descriptionSlot">
     <span>公開：<time>{entry.data.pubDate.toLocaleDateString('ja-jp')}</time></span>
     <p>{entry.data.description}</p>
+    {entry.data.pairName && <p>※右上のリンクから，{entry.data.pairName}もご覧いただけます．</p>}
   </div>
   <section class="mainContent">
     <Content />
