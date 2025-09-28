@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './canvas.module.scss'
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 
