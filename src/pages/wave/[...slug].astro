@@ -1,29 +1,30 @@
 ---
-import HeaderLayout from '../../layouts/HeaderLayout.astro';
+import HeaderLayout from "../../layouts/HeaderLayout.astro";
 
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 // 1. コレクションエントリーごとに新しいパスを生成
 export async function getStaticPaths() {
-  const frameworkEntries = await getCollection('framework');
-  return frameworkEntries.map(entry => ({
+  const waveEntries = await getCollection('wave');
+  return waveEntries.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
-};
+}
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-const titleOnHeader = entry.data.title + ' | Wave Graphics';
+const titleOnHeader = entry.data.title + " | Wave Graphics"
 ---
 
 <HeaderLayout
   title={titleOnHeader}
   description={entry.data.description}
 >
-  <a href="/framework">＜フレームワーク一覧に戻る</a>
+  <a href="/wave">＜波の一覧に戻る</a>
   <h2>{entry.data.title}</h2>
   <div class="descriptionSlot">
+    <span>公開：<time>{entry.data.pubDate.toLocaleDateString('ja-jp')}</time></span>
     <p>{entry.data.description}</p>
   </div>
   <section class="mainContent">
