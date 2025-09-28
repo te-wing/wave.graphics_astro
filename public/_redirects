@@ -1,1 +1,6 @@
 /policy/c/* /policy/:splat 308
+
+/wavelayout/* /wave/:splat 308
+
+/wave/tanshindou /wave/単振動 308
+/wave/pulse /wave/パルス波 308
