@@ -3,6 +3,16 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
 
 import { getCollection } from "astro:content";
 
+// 波
+const waveEntries = await getCollection('wave');
+
+const sortedWaveEntries = waveEntries.sort((a, b) => {
+  return b.data.num - a.data.num;
+});
+
+const lastTenWaveEntries = sortedWaveEntries.slice(0, 10);
+
+// フレームワーク
 const frameworkEntries = await getCollection('framework');
 
 const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
@@ -19,7 +29,16 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
     <h3>波の模型一覧</h3>
     <p>スクロールして，さまざまな波の模型を見てみましょう．</p>
     <ul>
-      
+      {lastTenWaveEntries.map(waveEntry => (
+        <li>
+          <h4>
+            <a class="h4title" href={`/wave/${waveEntry.slug}`}>{waveEntry.data.title}</a>
+          </h4>
+          <div class="subText">
+            <p>{waveEntry.data.description}</p>
+          </div>
+        </li>
+      ))}
     </ul>
     <a href="/wave">もっと見る</a>
   </section>
@@ -57,5 +76,8 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
   .h4description {
     font-weight: normal;
     font-size: 1em;
+  }
+  .subText {
+    color: var(--foregroundSub)
   }
 </style>
