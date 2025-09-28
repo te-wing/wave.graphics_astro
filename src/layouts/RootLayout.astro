@@ -6,8 +6,10 @@ interface Props {
   description?: string;
 }
 
+// KaTeX
 import 'katex/dist/katex.min.css';
 
+// Propsでメタタグを受け渡し
 const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
@@ -29,8 +31,6 @@ const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへよう�
 
     <!-- Astro -->
     <ClientRouter />
-
-
   </head>
   <body>
     <slot transition:animate="fade" />
