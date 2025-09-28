@@ -15,5 +15,18 @@ const sortedWaveEntries = waveEntries.sort((a, b) => {
   description="Wave Graphicsでは，以下のような波をご覧いただけます．"
 >
   <h2>波の模型一覧</h2>
-  
+  <p>Wave Graphics Appでは，以下のような波をご覧いただけます．スクロールして見てみましょう！</p>
+  <ul>
+    {sortedWaveEntries.map(waveEntry => {
+      <li>
+        <h4>
+          <a class="h4title" href={`/wave/${waveEntry.slug}`}>{waveEntry.data.title}</a>
+          <time class="subText">{waveEntry.data.pubDate.toLocaleDateString("ja-jp")}</time><span class="subText">更新</span>
+        </h4>
+        <div class="subText">
+          <p>{waveEntry.data.description}</p>
+        </div>
+      </li>
+    })}
+  </ul>
 </HeaderLayout>
