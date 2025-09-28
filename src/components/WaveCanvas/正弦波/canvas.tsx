@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState, useCallback } from 'react';
 import styles from './canvas.module.scss';
+import 'katex/dist/katex.min.css';
 import {InlineMath} from 'react-katex';
 
 interface OscillationCanvasProps {
