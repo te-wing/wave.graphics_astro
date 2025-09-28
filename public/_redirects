@@ -1,3 +1,5 @@
+/sitemap.xml /sitemap-index.xml 308
+
 /policy/c/* /policy/:splat 308
 
 /wavelayout/* /wave/:splat 308
