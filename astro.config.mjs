@@ -5,6 +5,8 @@ import svelte from '@astrojs/svelte';
 
 import mdx from '@astrojs/mdx';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -13,5 +15,5 @@ export default defineConfig({
     service: passthroughImageService(),
   },
 
-  integrations: [svelte(), mdx()],
+  integrations: [svelte(), mdx(), react()],
 });
