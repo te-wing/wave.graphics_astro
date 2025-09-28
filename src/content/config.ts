@@ -9,6 +9,8 @@ const waveCollection = defineCollection({
     description: z.string(),
     pubDate: z.date(),
     num: z.number(),
+    pairName: z.string().optional(),
+    pairPath: z.string().optional(),
   }),
 });
 
