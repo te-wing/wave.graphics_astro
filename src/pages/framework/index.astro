@@ -1,0 +1,19 @@
+---
+import HeaderLayout from "../../layouts/HeaderLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const frameworkEntries = await getCollection('framework');
+
+const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
+  return a.data.num - b.data.num;
+});
+---
+
+<HeaderLayout
+  title="フレームワーク | Wave Graphics"
+  description="Wave Graphics Appでは，以下のフレームワークを使用しています．このような技術にも興味を持っていただきたく思いますので，ぜひご覧ください．"
+>
+  <h2>利用しているフレームワーク</h2>
+  <p>Wave Graphics Appでは，以下のフレームワークを利用しています．このような技術にも興味を持っていただきたく思いますので，本ページにて紹介させていただきました．</p>
+</HeaderLayout>

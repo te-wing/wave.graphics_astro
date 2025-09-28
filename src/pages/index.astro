@@ -7,7 +7,7 @@ const frameworkEntries = await getCollection('framework');
 
 const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
   return a.data.num - b.data.num;
-})
+});
 
 const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
 ---
