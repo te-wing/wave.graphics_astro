@@ -1,5 +1,15 @@
 ---
 import HeaderLayout from "../layouts/HeaderLayout.astro";
+
+import { getCollection } from "astro:content";
+
+const frameworkEntries = await getCollection('framework');
+
+const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
+  return a.data.num - b.data.num;
+})
+
+const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
 ---
 
 <HeaderLayout
@@ -9,7 +19,13 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
     <h3>利用しているフレームワーク</h3>
     <p>ここには一部のみ表示しています．全て見るには<a href="/framework">こちら</a>をクリック！</p>
     <ul>
-      <li><strong><a href="/framework/11_astro">Astro</a></strong>：Astroは，コンテンツ中心のサイト（ブログ）の作成・デザインに便利なフレームワークです．</li>
+      {firstFiveFrameworkEntries.map(frameworkEntry => (
+        <li>
+          <h4>
+            <a class="h4title" href={`/framework/${frameworkEntry.slug}`}>{frameworkEntry.data.title}</a><span class="h4description">：{frameworkEntry.data.description}</span>
+          </h4>
+        </li>
+      ))}
     </ul>
   </section>
   <section>
@@ -24,3 +40,13 @@ import HeaderLayout from "../layouts/HeaderLayout.astro";
     </ul>
   </section>
 </HeaderLayout>
+
+<style lang="scss">
+  .h4title {
+    font-weight: bold;
+    font-size: 1em;
+  }
+  .h4description {
+    font-weight: normal;
+  }
+</style>
