@@ -1,0 +1,19 @@
+---
+import HeaderLayout from "../../layouts/HeaderLayout.astro";
+
+import { getCollection } from "astro:content";
+
+// 波
+const waveEntries = await getCollection('wave');
+const sortedWaveEntries = waveEntries.sort((a, b) => {
+  return b.data.num - a.data.num
+});
+---
+
+<HeaderLayout
+  title="波の模型一覧 | Wave Graphics"
+  description="Wave Graphicsでは，以下のような波をご覧いただけます．"
+>
+  <h2>波の模型一覧</h2>
+  
+</HeaderLayout>
