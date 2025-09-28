@@ -2,6 +2,14 @@
 import { z, defineCollection } from 'astro:content';
 
 // 2. コレクションを定義
+const waveCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
 const policyCollection = defineCollection({
   type: 'content', // v2.5.0以降
   schema: z.object({
@@ -24,4 +32,5 @@ const frameworkCollection = defineCollection({
 export const collections = {
   'policy': policyCollection,
   'framework': frameworkCollection,
+  'wave': waveCollection,
 };
