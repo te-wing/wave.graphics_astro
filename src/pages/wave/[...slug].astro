@@ -21,7 +21,10 @@ const titleOnHeader = entry.data.title + " | Wave Graphics"
   title={titleOnHeader}
   description={entry.data.description}
 >
-  <a href="/wave">＜波の一覧に戻る</a>
+  <div class="link">
+    <a href="/wave">＜波の一覧に戻る</a>
+    {entry.data.pairName && <a class="toPair" href={`/wave/${entry.data.pairPath}`}>{entry.data.pairName}＞</a>}
+  </div>
   <h2>{entry.data.title}</h2>
   <div class="descriptionSlot">
     <span>公開：<time>{entry.data.pubDate.toLocaleDateString('ja-jp')}</time></span>
@@ -51,5 +54,12 @@ const titleOnHeader = entry.data.title + " | Wave Graphics"
     box-sizing: border-box;
     width: 100%;
     padding: 0 22px;
+  }
+  .toPair {
+    text-align: right;
+  }
+  .link {
+    justify-content: space-between;
+    display: flex;
   }
 </style>
