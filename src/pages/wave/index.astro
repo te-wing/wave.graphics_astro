@@ -5,8 +5,9 @@ import { getCollection } from "astro:content";
 
 // 波
 const waveEntries = await getCollection('wave');
+
 const sortedWaveEntries = waveEntries.sort((a, b) => {
-  return b.data.num - a.data.num
+  return b.data.num - a.data.num;
 });
 ---
 
@@ -17,7 +18,7 @@ const sortedWaveEntries = waveEntries.sort((a, b) => {
   <h2>波の模型一覧</h2>
   <p>Wave Graphics Appでは，以下のような波をご覧いただけます．スクロールして見てみましょう！</p>
   <ul>
-    {sortedWaveEntries.map(waveEntry => {
+    {sortedWaveEntries.map(waveEntry => (
       <li>
         <h4>
           <a class="h4title" href={`/wave/${waveEntry.slug}`}>{waveEntry.data.title}</a>
@@ -27,7 +28,7 @@ const sortedWaveEntries = waveEntries.sort((a, b) => {
           <p>{waveEntry.data.description}</p>
         </div>
       </li>
-    })}
+    ))}
   </ul>
 </HeaderLayout>
 
