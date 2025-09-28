@@ -24,6 +24,7 @@ const frameworkCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    num: z.number(),
   }),
 });
 
