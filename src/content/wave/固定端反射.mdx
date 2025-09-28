@@ -6,6 +6,9 @@ num: 15000
 pairName: 自由端反射
 pairPath: 自由端反射
 ---
+import FixedEndReflectionCanvas from '../../components/WaveCanvas/固定端反射/canvas.tsx'
+
+<FixedEndReflectionCanvas client:load />
 
 ### 図の見方
 
@@ -20,5 +23,8 @@ pairPath: 自由端反射
 特徴としては，以下のようなものが挙げられる．
 
 - 反射波の波形は，図の紫色の点線部分を，反射面に対して線対称移動してから，上下反転させることで得られる．
-- 入射波と反射波で，位相はπだけずれる（上下に反転する）．
+- 入射波と反射波で，位相は$\pi$だけずれる（上下に反転する）．
 - 端点の変位は$0$である．
+
+#### 具体例
+紐やバネの端点を固定して波を生じた時，端点が動かない反射が起きる．

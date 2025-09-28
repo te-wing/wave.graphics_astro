@@ -1,28 +1,28 @@
 import React, { useRef, useEffect, useCallback, useState } from 'react';
 
 // コンポーネントのプロパティを定義するインターフェース
-interface FreeEndReflectionCanvasProps {
+interface FixedEndReflectionCanvasProps {
   pulseSpread?: number; // パルス波の広がり (標準偏差)
   pulseAmplitude?: number; // パルス波の振幅
   pulseSpeed?: number; // パルス波の伝播速度 (時間軸上の速度)
   duration?: number; // キャンバスが表現する時間軸の全長
   height?: number; // キャンバスの高さ
   lineColor?: string; // 入射波の線の色 (オレンジの線)
-  reflectedLineColor?: string; // 反射波の線の色 (赤い線)
+  reflectedLineColor?: string; // 反射波の線の色 (赤の線 - 反転を示す)
   combinedLineColor?: string; // 合成波の線の色 (緑の線)
   backgroundColor?: string; // キャンバスの背景色
 }
 
-// 自由端反射波シミュレーションのReactコンポーネント
-const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
+// 固定端反射波シミュレーションのReactコンポーネント
+const FixedEndReflectionCanvas: React.FC<FixedEndReflectionCanvasProps> = ({
   pulseSpread = 0.1, // パルス波の広がり（デフォルト値）
   pulseAmplitude = 50, // パルス波の振幅（デフォルト値）
   pulseSpeed = 0.2, // パルス波の速度（デフォルト値）
   duration = 0.7, // シミュレーションの総時間（デフォルト値）
   height = 300, // キャンバスの高さ（デフォルト値）
-  lineColor = '#ea00ffff', // 入射波の線の色（デフォルト値）
-  reflectedLineColor = '#00cc00', // 反射波の線の色（デフォルト値）
-  combinedLineColor = '#ffa238', // 合成波の線の色（デフォルト値）
+  lineColor = '#ea00ffff', // 入射波の線の色（デフォルト値：オレンジ）
+  reflectedLineColor = '#00cc00', // 反射波の線の色（デフォルト値：赤 - 反転を示す）
+  combinedLineColor = '#ffa238', // 合成波の線の色（デフォルト値：緑）
   backgroundColor = 'transparent', // キャンバスの背景色（デフォルト値）
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null); // キャンバス要素への参照
@@ -64,16 +64,18 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
   const reflectionPointTime = reflectionPointX / xScale;
 
   // 特定の「時間」座標における波の振幅を取得するヘルパー関数
-  // これはガウス関数の値を直接計算
+  // これはガウス関数の値を直接計算し、必要に応じて反転させる
   const getWaveAmplitudeAtTime = useCallback((
     targetTime: number, // 「時間」座標（ガウス関数のx軸に相当）
     amp: number, // 振幅
     sigma: number, // 広がり（標準偏差）
-    centerTime: number // ガウスパルスの中心
+    centerTime: number, // ガウスパルスの中心
+    isInverted: boolean = false // 固定端反射の場合に振幅を反転させるフラグ
   ): number => {
     // ガウス関数: A * exp(-(t - t0)^2 / (2 * sigma^2))
     const exponent = -Math.pow(targetTime - centerTime, 2) / (2 * Math.pow(sigma, 2));
-    return amp * Math.exp(exponent);
+    const amplitude = amp * Math.exp(exponent);
+    return isInverted ? -amplitude : amplitude; // isInvertedがtrueの場合、振幅を反転
   }, []);
 
   // 波を描画する関数
@@ -102,17 +104,17 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
     ctx.lineTo(canvasWidth, yOffset);
     ctx.stroke();
 
-    // 反射壁（垂直な破線の青い線）を描画
+    // 反射壁（垂直な実線の青い線）を描画 - 固定端なので実線
     ctx.strokeStyle = 'red';
     ctx.lineWidth = 2;
-    ctx.setLineDash([5, 5]); // 破線パターン
+    ctx.setLineDash([5, 5]); // 実線パターン
     ctx.beginPath();
     ctx.moveTo(reflectionPointX, 0);
     ctx.lineTo(reflectionPointX, height);
     ctx.stroke();
-    ctx.setLineDash([]); // 後続の描画のために破線をリセット
 
-    // --- 反射波のみ（赤い細い線）の描画 ---
+    // --- 反射波のみ（赤の細い線）の描画 ---
+    // 反射波は反転して描画される（視覚的に分かりやすくするため）
     ctx.strokeStyle = reflectedLineColor; // 赤い線
     ctx.lineWidth = 1; // 細い線
     ctx.setLineDash([]); // 実線に設定
@@ -121,8 +123,8 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
     // 反射波は反射壁より左側のみに描画
     for (let xPixel = 0; xPixel <= reflectionPointX; xPixel++) {
       const t = xPixel / xScale;
-      // 反射波の振幅のみを計算
-      const reflectedAmplitude = getWaveAmplitudeAtTime(t, pulseAmplitude, pulseSpread, reflectedTimeOffset);
+      // 反射波の振幅を計算（固定端なので反転）
+      const reflectedAmplitude = getWaveAmplitudeAtTime(t, pulseAmplitude, pulseSpread, reflectedTimeOffset, true); // trueで反転
       const y = yOffset - reflectedAmplitude * 0.45 * yScale; // 係数を0.45に変更
       if (xPixel === 0) {
         ctx.moveTo(xPixel, y);
@@ -182,9 +184,10 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
     for (let xPixel = 0; xPixel <= reflectionPointX; xPixel++) {
       const t = xPixel / xScale;
       const incidentAmplitude = getWaveAmplitudeAtTime(t, pulseAmplitude, pulseSpread, incidentTimeOffset);
-      const reflectedAmplitude = getWaveAmplitudeAtTime(t, pulseAmplitude, pulseSpread, reflectedTimeOffset);
-      // 入射波と反射波の振幅を足し合わせる
-      const combinedAmplitude = incidentAmplitude + reflectedAmplitude;
+      // 固定端反射のため、反射波の振幅は反転したものを使用
+      const reflectedAmplitudeForCombination = getWaveAmplitudeAtTime(t, pulseAmplitude, pulseSpread, reflectedTimeOffset, true); // trueで反転
+      // 入射波と反転した反射波の振幅を足し合わせる
+      const combinedAmplitude = incidentAmplitude + reflectedAmplitudeForCombination;
       const y = yOffset - combinedAmplitude * 0.45 * yScale; // 係数を0.45に変更
       if (xPixel === 0) {
         ctx.moveTo(xPixel, y);
@@ -217,7 +220,7 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
     setIncidentTimeOffset(currentIncidentPulseCenter);
 
     // 反射波の中心を常に計算
-    // 自由端反射の場合、反射波の仮想波源は反射点に対してミラーリングされる
+    // 固定端反射の場合も、反射波の仮想波源は反射点に対してミラーリングされる
     // 入射パルスの中心がC_inc、反射点がRの場合、
     // 仮想波源はR + (R - C_inc) = 2R - C_inc
     const currentReflectedPulseCenter = 2 * reflectionPointTime - currentIncidentPulseCenter;
@@ -265,4 +268,4 @@ const Canvas: React.FC<FreeEndReflectionCanvasProps> = ({
   );
 };
 
-export default Canvas;
+export default FixedEndReflectionCanvas;
