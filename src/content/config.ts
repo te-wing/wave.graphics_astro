@@ -8,7 +8,7 @@ const waveCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
-    num: z.string(),
+    num: z.number(),
   }),
 });
 
