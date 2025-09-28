@@ -16,4 +16,27 @@ const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
 >
   <h2>利用しているフレームワーク</h2>
   <p>Wave Graphics Appでは，以下のフレームワークを利用しています．このような技術にも興味を持っていただきたく思いますので，本ページにて紹介させていただきました．</p>
+  <section>
+    <ul>
+      {sortedFrameworkEntries.map(frameworkEntry => (
+        <li>
+          <h4>
+            <a href={`/framework/${frameworkEntry.slug}`}>{frameworkEntry.data.title}</a><span>：{frameworkEntry.data.description}</span>
+          </h4>
+        </li>
+      ))}
+    </ul>
+  </section>
 </HeaderLayout>
+
+<style lang="scss">
+  h4 {
+    font-size: 1em;
+    a {
+      font-weight: bold;
+    }
+    span {
+      font-weight: normal;
+    }
+  }
+</style>
