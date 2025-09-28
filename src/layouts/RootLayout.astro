@@ -6,6 +6,8 @@ interface Props {
   description?: string;
 }
 
+import 'katex/dist/katex.min.css';
+
 const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
@@ -28,8 +30,7 @@ const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへよう�
     <!-- Astro -->
     <ClientRouter />
 
-    <!-- KaTeX -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+
   </head>
   <body>
     <slot transition:animate="fade" />
