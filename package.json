@@ -13,6 +13,7 @@
     "@astrojs/react": "^4.4.0",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/svelte": "^7.2.0",
+    "@astrojs/vue": "^5.1.1",
     "@pagefind/default-ui": "^1.4.0",
     "@types/react": "^19.1.14",
     "@types/react-dom": "^19.1.9",
@@ -28,6 +29,7 @@
     "sass": "^1.93.2",
     "svelte": "^5.39.6",
     "svelte-turnstile": "^0.11.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vue": "^3.5.22"
   }
 }

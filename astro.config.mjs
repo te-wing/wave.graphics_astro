@@ -12,6 +12,8 @@ import react from '@astrojs/react';
 
 import sitemap from '@astrojs/sitemap';
 
+import vue from '@astrojs/vue';
+
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
@@ -26,5 +28,5 @@ export default defineConfig({
     rehypePlugins: [rehypeKatex],
   },
 
-  integrations: [svelte(), mdx(), react(), sitemap()],
+  integrations: [svelte(), mdx(), react(), sitemap(), vue()],
 });
