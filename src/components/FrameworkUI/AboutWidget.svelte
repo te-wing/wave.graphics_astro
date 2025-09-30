@@ -7,7 +7,7 @@
 
 <div class='widgetSlot'>
   <div>
-    <img alt='ロゴ' src={icon}>
+
   </div>
   <div class='linkSlot'>
     <a class='viewSite' style="--theme-color: {themeColor}" target='_blank' href={siteUrl}>
@@ -25,7 +25,7 @@
   .widgetSlot {
     width: 100%;
     display: flex;
-    border-radius: 10px;
+    border-radius: 17px;
     background: linear-gradient(135deg, #ffffff, #ffffff);
     box-sizing: border-box;
 
