@@ -32,7 +32,7 @@ const frameworkCollection = defineCollection({
     siteUrl: z.string(),
     githubUrl: z.string(),
     icon: z.string(),
-    themeColor: z.string().default('#3f48ff88'),
+    themeColor: z.string().default('#888eff'),
   }),
 });
 
