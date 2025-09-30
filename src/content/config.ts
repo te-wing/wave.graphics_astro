@@ -29,6 +29,9 @@ const frameworkCollection = defineCollection({
     title: z.string(),
     description: z.string(),
     num: z.number(),
+    siteUrl: z.string(),
+    githubUrl: z.string(),
+    icon: z.string()
   }),
 });
 
