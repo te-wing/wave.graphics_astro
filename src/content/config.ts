@@ -33,7 +33,6 @@ const frameworkCollection = defineCollection({
     githubUrl: z.string(),
     icon: z.string(),
     themeColor: z.string().default('#3f48ff88'),
-    themeDark: z.boolean().default(false)
   }),
 });
 

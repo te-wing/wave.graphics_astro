@@ -3,13 +3,6 @@
   export let githubUrl: string;
   export let icon: string;
   export let themeColor: string;
-  export let themeDark: boolean;
-
-  if (themeDark) {
-    themeText: white;
-  } else {
-    themeText: black;
-  }
 </script>
 
 <div class='widgetSlot'>
@@ -56,6 +49,7 @@
 
       .viewSite {
         background-color: var(--theme-color);
+        color: black;
       }
 
       .viewGitHub {
