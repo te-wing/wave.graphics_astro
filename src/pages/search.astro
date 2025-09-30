@@ -1,17 +1,9 @@
 ---
 import HeaderLayout from "../layouts/HeaderLayout.astro";
 
-import "@pagefind/default-ui/css/ui.css";
+import SearchSlot from '../components/LayoutUI/SearchSlot.svelte';
 ---
 
 <HeaderLayout>
-  <div class="search"></div>
+  <SearchSlot client:load />
 </HeaderLayout>
-
-<script>
-  import { PagefindUI } from "@pagefind/default-ui";
-
-  new PagefindUI({
-    element: ".search",
-  });
-</script>
