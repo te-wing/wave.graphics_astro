@@ -25,7 +25,8 @@
   .widgetSlot {
     width: 100%;
     display: flex;
-    background: linear-gradient(135deg, white, white);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ffffff, #ffffff);
     box-sizing: border-box;
 
     .linkSlot {
