@@ -4,4 +4,5 @@ description: Pagefindは，クライアントサイドの処理だけで高速�
 num: 12
 siteUrl: https://pagefind.app
 githubUrl: https://github.com/pagefind/pagefind
+themeColor: white
 ---

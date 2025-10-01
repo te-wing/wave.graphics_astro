@@ -5,4 +5,5 @@ num: 11
 siteUrl: https://astro.build/
 githubUrl: https://github.com/withastro
 icon: https://astro.build/favicon.svg
+themeColor: rgba(255, 34, 163, 1)
 ---
