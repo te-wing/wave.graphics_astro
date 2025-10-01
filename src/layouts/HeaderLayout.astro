@@ -7,14 +7,16 @@ import Header from '../components/LayoutUI/Header.astro';
 interface Props {
   title?: string;
   description?: string;
+  anotherFavicon?: string;
 }
 
-const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
 <RootLayout
   title={title}
   description={description}
+  anotherFavicon={anotherFavicon}
 >
   <Header />
   <div data-pagefind-body class='slotDiv'>

@@ -4,13 +4,14 @@ import { ClientRouter } from 'astro:transitions';
 interface Props {
   title?: string;
   description?: string;
+  anotherFavicon?: string;
 }
 
 // KaTeX
 import 'katex/dist/katex.min.css';
 
 // Propsでメタタグを受け渡し
-const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
 <!doctype HTML>
@@ -27,8 +28,9 @@ const { title = 'Wave Graphics', description = 'Wave Graphicsアプリへよう�
     <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- アイコン -->
-    <link rel="apple-touch-icon" href="/icons/favicon.png" />
-    <link rel="icon" href="/icons/favicon.png" />
+    <link rel="apple-touch-icon" href={anotherFavicon} />
+    <link rel="icon" href={anotherFavicon} />
+    <meta data-pagefind-default-meta="image[content]" content={anotherFavicon} property="og:image" />
 
     <!-- Astro -->
     <ClientRouter />
