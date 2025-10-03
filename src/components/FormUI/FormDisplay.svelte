@@ -169,4 +169,7 @@
       margin-top: 10px;
     }
   }
+  #email {
+    font-family: FiraCode;
+  }
 </style>
