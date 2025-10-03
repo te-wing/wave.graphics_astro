@@ -37,9 +37,15 @@ const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Gr
     <!-- Astro -->
     <ClientRouter />
   </head>
-  <body>
-    <slot transition:animate="fade" />
-  </body>
+  {noindex ? (
+    <body data-pagefind-ignore="all">
+      <slot transition:animate="fade" />
+    </body>
+  ) : (
+    <body>
+      <slot transition:animate="fade" />
+    </body>
+  )}
 </html>
 
 <style is:global>
