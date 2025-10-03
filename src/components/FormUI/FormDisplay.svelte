@@ -68,10 +68,15 @@
   <form on:submit={handleSubmit}>
     <fieldset>
       <legend>あなたについて</legend>
-      <label for='name'>お名前</label>
-      <input name='name' placeholder='ニックネームもOKです．' type='text' id='name' bind:value={username} /><br />
-      <label for='email'>メールアドレス</label>
-      <input name='email' placeholder='weare@lifeis.money' type='text' id='email' bind:value={email} />
+      <div class='spacer'>
+        <label for='name'>お名前</label>
+        <input name='name' placeholder='ニックネームもOKです．' type='text' id='name' bind:value={username} />
+      </div>
+      <br />
+      <div class='spacer'>
+        <label for='email'>メールアドレス</label>
+        <input name='email' placeholder='contact@wave.graphics' type='text' id='email' bind:value={email} />
+      </div>
     </fieldset>
     <fieldset>
       <legend>評価とコメント</legend>
@@ -114,7 +119,43 @@
     display: none;
   }
 
-  legend, input {
+  legend, input, textarea {
     font-family: ZenMaru;
+    font-size: 1em;
+  }
+  legend {
+    text-align: center;
+  }
+
+  .spacer {
+    display: flex;
+    justify-content: center;
+    label {
+      width: 120px;
+      text-align: right;
+    }
+    input {
+      width: 380px;
+      margin-left: 10px;
+    }
+  }
+  @media (max-width: 550px) {
+    .spacer {
+      flex-direction: column;
+      label {
+        width: 100%;
+        text-align: left;
+      }
+      input {
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+    }
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    box-sizing: border-box;
   }
 </style>
