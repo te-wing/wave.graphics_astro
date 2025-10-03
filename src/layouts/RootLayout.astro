@@ -5,13 +5,14 @@ interface Props {
   title?: string;
   description?: string;
   anotherFavicon?: string;
+  noindex?: boolean;
 }
 
 // KaTeX
 import 'katex/dist/katex.min.css';
 
 // Propsでメタタグを受け渡し
-const { anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
 <!doctype HTML>
@@ -26,7 +27,9 @@ const { anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', descript
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
+    {noindex ? (
+      <meta name="robots" content="noindex">
+    )
     <!-- アイコン -->
     <link rel="apple-touch-icon" href={anotherFavicon} />
     <link rel="icon" href={anotherFavicon} />
