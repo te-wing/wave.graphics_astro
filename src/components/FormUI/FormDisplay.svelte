@@ -106,7 +106,7 @@
       <textarea placeholder='ここにコメントを入力' id='comment' name='comment' bind:value={comment}></textarea>
     </fieldset>
     <Turnstile siteKey='0x4AAAAAABpyNGg6V96WphRE' />
-    <div>
+    <div class='submitBtnBox'>
       <button type='submit'>
         送信
       </button>
@@ -157,5 +157,16 @@
     width: 100%;
     height: 100px;
     box-sizing: border-box;
+  }
+  .submitBtnBox {
+    display: flex;
+    justify-content: center;
+    button {
+      width: 100px;
+      height: 38px;
+      font-family: ZenMaru;
+      font-size: 1.13em;
+      margin-top: 10px;
+    }
   }
 </style>
