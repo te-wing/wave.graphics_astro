@@ -10,9 +10,10 @@ interface Props {
   description?: string;
   anotherFavicon?: string;
   noindex?: boolean;
+  hideCurrentPath?: boolean;
 }
 
-const { noindex = false,  anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { noindex = false, hideCurrentPath = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
 <RootLayout
@@ -23,7 +24,7 @@ const { noindex = false,  anotherFavicon = '/icons/favicon.png', title = 'Wave G
 >
   <Header />
   <div class='slotDiv'>
-    <CurrentPathOnSSG />
+    {!hideCurrentPath && (<CurrentPathOnSSG />)}
     <div data-pagefind-body>
       <slot />
     </div>

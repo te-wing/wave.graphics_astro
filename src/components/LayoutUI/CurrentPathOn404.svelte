@@ -5,7 +5,7 @@
 
   onMount(() => {
     if (typeof window !== 'undefined') {
-      const pathname = window.location.pathname;
+      const pathname = decodeURI(window.location.pathname);
 
       const segments = pathname.split('/').filter(segment => segment.length > 0);
 
@@ -42,15 +42,12 @@
   {:else if typeof window !== 'undefined'}
     <a href='/'>https://wave.graphics</a>
   {:else}
-    <p class='loadingText'>パスを取得中です...</p>
+    <p>パスを取得中です...</p>
   {/if}
 </div>
 
 <style lang='scss'>
   a, p, span {
-    font-family: FiraCode;
-  }
-  .loadingText {
-    font-family: ZenMaru;
+    font-family: FiraCode, ZenMaru;
   }
 </style>
