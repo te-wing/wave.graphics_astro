@@ -8,6 +8,11 @@
 /wave/sinwave /wave/正弦波/ 308
 /wave/tateyoko /wave/縦波と横波/ 308
 
+
+/wr3Fx /wave/正弦波/ 308
+/w4fF9 /wave/波の重ね合わせ/ 308
+
+
 /policy/c/* /policy/:splat 308
 
 /wavelayout/* /wave/:splat 308
