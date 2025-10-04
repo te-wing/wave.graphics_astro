@@ -186,7 +186,7 @@
   textarea:focus {
     border-color: var(--a-hover);
     outline: none;
-    color: var(--a-default)
+    color: var(--a-default);
   }
 
   /* WebKit */
