@@ -5,4 +5,5 @@ num: 12
 siteUrl: https://pagefind.app
 githubUrl: https://github.com/pagefind/pagefind
 themeColor: white
+icon: https://pagefind.app/meta/apple-touch-icon.png
 ---

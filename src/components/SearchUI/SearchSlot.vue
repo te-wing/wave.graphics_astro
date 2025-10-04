@@ -32,4 +32,8 @@
       --pagefind-ui-font: ZenMaru;
     }
   }
+
+  .pagefind-ui__result-image {
+    background-color: white;
+  }
 </style>
