@@ -5,5 +5,5 @@ num: 14
 siteUrl: https://ja.vuejs.org/
 githubUrl: https://github.com/vuejs
 themeColor: rgba(66, 184, 131, 1)
-
+icon: https://vuejs.org/images/logo.png
 ---
