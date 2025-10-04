@@ -34,11 +34,7 @@
         {#if i > 0}
           <span>&nbsp;&gt;</span>
         {/if}
-        <a 
-          href={segment.path} 
-          on:click|preventDefault={() => navigate(segment.path)}
-          class="path-segment-link"
-        >
+        <a href={segment.path}>
           {segment.name}
         </a>
       {/each}
