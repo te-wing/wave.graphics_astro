@@ -188,4 +188,22 @@
     outline: none;
     color: var(--a-default)
   }
+
+  /* WebKit */
+  ::-webkit-input-placeholder {
+    color: var(--foregroundSub);
+    opacity: 0.6;
+  }
+
+  /* Firefox */
+  ::-moz-placeholder {
+    color: var(--foregroundSub); /* 任意のカラーコード */
+    opacity: 0.6; /* ★重要：Firefoxでの薄さを解消 */
+  }
+
+  /* 共通 */
+  ::placeholder {
+    color: var(--foregroundSub);
+    opacity: 0.6;
+  }
 </style>
