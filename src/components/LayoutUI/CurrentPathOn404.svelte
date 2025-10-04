@@ -34,10 +34,10 @@
   {#if pathSegments.length > 0}
     <p>
       <a href='/'>https://wave.graphics</a>
-      <span>></span>
+      <span>&gt;</span>
       {#each pathSegments as segment, i}
         {#if i > 0}
-          <span> > </span>
+          <span>&nbsp;&gt;</span>
         {/if}
         <a 
           href={segment.path} 
@@ -51,12 +51,15 @@
   {:else if typeof window !== 'undefined'}
     <a href='/'>https://wave.graphics</a>
   {:else}
-    <p>パスを取得中です...</p>
+    <p class='loadingText'>パスを取得中です...</p>
   {/if}
 </div>
 
 <style lang='scss'>
   a, p, span {
     font-family: FiraCode;
+  }
+  .loadingText {
+    font-family: ZenMaru;
   }
 </style>
