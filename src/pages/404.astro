@@ -1,6 +1,6 @@
 ---
 import HeaderLayout from '../layouts/HeaderLayout.astro';
-import CurrentPath from '../components/LayoutUI/CurrentPath.svelte';
+import CurrentPathOn404 from '../components/LayoutUI/CurrentPathOn404.svelte';
 ---
 
 <HeaderLayout
@@ -9,7 +9,7 @@ import CurrentPath from '../components/LayoutUI/CurrentPath.svelte';
 >
   <section data-pagefind-ignore="all">
     <h2>404 Not Found</h2>
-    <CurrentPath client:load />
+    <CurrentPathOn404 client:load />
     <p>お探しのページは見つかりませんでした．ページが削除されたか，移動した可能性もあります．</p>
   </section>
 </HeaderLayout>
