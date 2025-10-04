@@ -23,11 +23,6 @@
       });
     }
   });
-
-  // リンクをクリックしたときのナビゲーション関数
-  const navigate = (path: string) => {
-    window.location.href = path;
-  };
 </script>
 
 <div>
