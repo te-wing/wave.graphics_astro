@@ -122,9 +122,15 @@
   legend, input, textarea {
     font-family: ZenMaru;
     font-size: 1em;
+    background: transparent;
+    color: var(--foreground);
   }
   legend {
     text-align: center;
+  }
+  fieldset, input, textarea {
+    border: 2px solid var(--foregroundSub);
+    border-radius: 17px 5px;
   }
 
   .spacer {
