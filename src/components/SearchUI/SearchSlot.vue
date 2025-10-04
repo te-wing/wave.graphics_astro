@@ -34,6 +34,6 @@
   }
 
   .pagefind-ui__result-image {
-    background-color: white;
+    background-color: white !important;
   }
 </style>
