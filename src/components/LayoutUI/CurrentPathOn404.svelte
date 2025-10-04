@@ -30,7 +30,7 @@
   };
 </script>
 
-<div class="currentPath">
+<div>
   {#if pathSegments.length > 0}
     <p>
       <a href='/'>https://wave.graphics</a>
@@ -56,7 +56,7 @@
 </div>
 
 <style lang='scss'>
-  .currentPath {
+  a, p, span {
     font-family: FiraCode;
   }
 </style>
