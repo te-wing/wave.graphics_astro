@@ -173,6 +173,10 @@
       font-family: ZenMaru;
       font-size: 1.13em;
       margin-top: 10px;
+      border: 2px solid var(--button-hover-border);
+      background-color: var(--button-background);
+      border-radius: 17px 8px;
+      color: var(--foreground);
     }
   }
   #email {
