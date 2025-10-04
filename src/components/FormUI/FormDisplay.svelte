@@ -182,4 +182,10 @@
   #email {
     font-family: FiraCode;
   }
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: var(--a-hover);
+    outline: none;
+    color: var(--a-default)
+  }
 </style>
