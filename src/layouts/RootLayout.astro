@@ -12,7 +12,7 @@ interface Props {
 import 'katex/dist/katex.min.css';
 
 // Propsでメタタグを受け渡し
-const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { noindex = false, anotherFavicon = '/hotlink-ok//icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 ---
 
 <!doctype HTML>
@@ -30,8 +30,8 @@ const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Gr
     {noindex && <meta name="robots" content="noindex" />}
 
     <!-- アイコン -->
-    <link rel="apple-touch-icon" href="/icons/favicon.png" />
-    <link rel="icon" href='/icons/favicon.png' />
+    <link rel="apple-touch-icon" href="/hotlink-ok/icons/favicon.png" />
+    <link rel="icon" href='/hotlink-ok/icons/favicon.png' />
     <meta data-pagefind-default-meta="image[content]" content={anotherFavicon} />
 
     <!-- SNS -->
@@ -40,7 +40,7 @@ const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Gr
     <meta property="og:image" content={anotherFavicon} />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="/icons/favicon.png" />
+    <meta name="twitter:card" content="/hotlink-ok/icons/favicon.png" />
     <meta name="twitter:site" content="@wing__0902" />
     <meta name="twitter:domain" content="wave.graphics" />
     <meta property="twitter:title" content={title} />
