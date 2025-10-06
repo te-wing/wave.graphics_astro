@@ -30,13 +30,21 @@ const { noindex = false, anotherFavicon = '/icons/favicon.png', title = 'Wave Gr
     {noindex && <meta name="robots" content="noindex" />}
 
     <!-- アイコン -->
-    <link rel="apple-touch-icon" href={anotherFavicon} />
-    <link rel="icon" href={anotherFavicon} />
+    <link rel="apple-touch-icon" href="/icons/favicon.png" />
+    <link rel="icon" href='/icons/favicon.png' />
     <meta data-pagefind-default-meta="image[content]" content={anotherFavicon} property="og:image" />
 
     <!-- SNS -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="/icons/favicon.png" />
+    <meta name="twitter:site" content="@wing__0902" />
+    <meta name="twitter:domain" content="wave.graphics" />
+    <meta property="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={anotherFavicon} />
 
     <!-- Astro -->
     <ClientRouter />
