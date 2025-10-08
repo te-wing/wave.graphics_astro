@@ -18,6 +18,11 @@ import vue from '@astrojs/vue';
 export default defineConfig({
   output: 'static',
   site: 'https://wave.graphics',
+  trailingSlash: 'always',
+  compressHTML: true,
+  build: {
+    format: 'directory',
+  },
 
   image: {
     service: passthroughImageService(),
