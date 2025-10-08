@@ -13,6 +13,8 @@ import 'katex/dist/katex.min.css';
 
 // Propsでメタタグを受け渡し
 const { noindex = false, anotherFavicon = '/hotlink-ok//icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+
+const currentURL = decodeURI(Astro.url.pathname);
 ---
 
 <!doctype HTML>
@@ -52,6 +54,7 @@ const { noindex = false, anotherFavicon = '/hotlink-ok//icons/favicon.png', titl
   </head>
   <body>
     <slot transition:animate="fade" />
+    <p>ここは：{currentURL}</p>
   </body>
 </html>
 

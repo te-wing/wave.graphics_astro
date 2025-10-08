@@ -21,7 +21,7 @@ const sortedFrameworkEntries = frameworkEntries.sort((a, b) => {
       {sortedFrameworkEntries.map(frameworkEntry => (
         <li>
           <h4>
-            <a href={`/framework/${frameworkEntry.slug}`}>{frameworkEntry.data.title}</a><span>：{frameworkEntry.data.description}</span>
+            <a href={`/framework/${frameworkEntry.slug}/`}>{frameworkEntry.data.title}</a><span>：{frameworkEntry.data.description}</span>
           </h4>
         </li>
       ))}

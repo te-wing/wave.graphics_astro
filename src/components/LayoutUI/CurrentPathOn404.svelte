@@ -12,7 +12,7 @@
       let currentPathAccumulator = '';
       pathSegments = segments.map(segment => {
         // 現在の累積パスにセグメントを追加
-        currentPathAccumulator += `/${segment}`;
+        currentPathAccumulator += `/${segment}/`;
         
         return {
           // 表示用の名前。ファイル名の場合は拡張子を除去（例：index.html -> index）

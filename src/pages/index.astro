@@ -32,7 +32,7 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
       {lastTenWaveEntries.map(waveEntry => (
         <li>
           <h4>
-            <a class="h4title" href={`/wave/${waveEntry.slug}`}>{waveEntry.data.title}</a>
+            <a class="h4title" href={`/wave/${waveEntry.slug}/`}>{waveEntry.data.title}</a>
             <time class="subText">{waveEntry.data.pubDate.toLocaleDateString("ja-jp")}</time><span class="subText">公開</span>
           </h4>
           <div class="subText">
@@ -41,7 +41,7 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
         </li>
       ))}
     </ul>
-    <a href="/wave">もっと見る</a>
+    <a href="/wave/">もっと見る</a>
   </section>
   <section>
     <h3>利用しているフレームワーク</h3>
@@ -49,18 +49,18 @@ const firstFiveFrameworkEntries = sortedFrameworkEntries.slice(0, 5);
       {firstFiveFrameworkEntries.map(frameworkEntry => (
         <li>
           <h4>
-            <a class="h4title" href={`/framework/${frameworkEntry.slug}`}>{frameworkEntry.data.title}</a><span class="h4description">：{frameworkEntry.data.description}</span>
+            <a class="h4title" href={`/framework/${frameworkEntry.slug}/`}>{frameworkEntry.data.title}</a><span class="h4description">：{frameworkEntry.data.description}</span>
           </h4>
         </li>
       ))}
     </ul>
-    <a href="/framework">もっと見る</a>
+    <a href="/framework/">もっと見る</a>
   </section>
   <section>
     <h3>アンケートとお問い合わせ</h3>
     <ul>
       <li>
-        <strong><a href='/form'>アンケート</a></strong>：Wave Graphics Appをより良くするため，アンケートでご意見を伺っております．運営者へのお問い合わせなどもフォームで受け付けております．
+        <strong><a href='/form/'>アンケート</a></strong>：Wave Graphics Appをより良くするため，アンケートでご意見を伺っております．運営者へのお問い合わせなどもフォームで受け付けております．
       </li>
       <li>
         <strong><a href='mailto:wing@me.wing.osaka'>メール</a></strong>：サイト運営者へのお問い合わせなどは，メールでも受け付けております．返信することは確約できませんが，可能な限り頂いたメールは拝見いたします．

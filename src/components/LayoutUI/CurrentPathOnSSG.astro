@@ -8,7 +8,7 @@ const segments = currentPath.split('/').filter(segment => segment.length > 0);
 let currentPathAccumulator = '';
 
 pathSegments = segments.map(segment => {
-  currentPathAccumulator += `/${segment}`;
+  currentPathAccumulator += `/${segment}/`;
 
   return {
     name: segment.includes('.') ? segment.substring(0, segment.lastIndexOf('.')): segment,

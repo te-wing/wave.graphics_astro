@@ -21,7 +21,7 @@ const sortedWaveEntries = waveEntries.sort((a, b) => {
     {sortedWaveEntries.map(waveEntry => (
       <li>
         <h4>
-          <a class="h4title" href={`/wave/${waveEntry.slug}`}>{waveEntry.data.title}</a>
+          <a class="h4title" href={`/wave/${waveEntry.slug}/`}>{waveEntry.data.title}</a>
           <time class="subText">{waveEntry.data.pubDate.toLocaleDateString("ja-jp")}</time><span class="subText">公開</span>
         </h4>
         <div class="subText">
