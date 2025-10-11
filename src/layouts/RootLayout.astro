@@ -15,8 +15,7 @@ import 'katex/dist/katex.min.css';
 // Propsでメタタグを受け渡し
 const { ogType = 'website', noindex = false, anotherFavicon = 'https://wave.graphics/hotlink-ok/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 
-const currentURL = decodeURI(Astro.url.pathname);
-const 正規URL = `https://wave.graphics${currentURL}`;
+const 正規URL = new URL(Astro.url.pathname, Astro.site).href; 
 ---
 
 <!doctype HTML>
