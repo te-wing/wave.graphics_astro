@@ -15,6 +15,7 @@ import 'katex/dist/katex.min.css';
 const { noindex = false, anotherFavicon = '/hotlink-ok//icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 
 const currentURL = decodeURI(Astro.url.pathname);
+const 正規URL = `https://wave.graphics${currentURL}`;
 ---
 
 <!doctype HTML>
@@ -30,7 +31,7 @@ const currentURL = decodeURI(Astro.url.pathname);
     <meta name="description" content={description} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={currentURL} />
+    <link rel="canonical" href={正規URL} />
 
     <!-- アイコン -->
     <link rel="apple-touch-icon" href="/hotlink-ok/icons/favicon.png" />
@@ -55,7 +56,7 @@ const currentURL = decodeURI(Astro.url.pathname);
   </head>
   <body>
     <slot transition:animate="fade" />
-    <p>ここは：{currentURL}</p>
+    <p>ここは：{正規URL}</p>
   </body>
 </html>
 
