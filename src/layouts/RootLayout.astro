@@ -6,13 +6,14 @@ interface Props {
   description?: string;
   anotherFavicon?: string;
   noindex?: boolean;
+  ogType?: string;
 }
 
 // KaTeX
 import 'katex/dist/katex.min.css';
 
 // Propsでメタタグを受け渡し
-const { noindex = false, anotherFavicon = '/hotlink-ok//icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
+const { ogType = 'website', noindex = false, anotherFavicon = 'https://wave.graphics/hotlink-ok/icons/favicon.png', title = 'Wave Graphics', description = 'Wave Graphicsアプリへようこそ！このアプリでは，物理の授業で出てきそうな，波の模型をデジタル化し，ウェブで閲覧可能にしたものです．' } = Astro.props;
 
 const currentURL = decodeURI(Astro.url.pathname);
 const 正規URL = `https://wave.graphics${currentURL}`;
@@ -42,9 +43,12 @@ const 正規URL = `https://wave.graphics${currentURL}`;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={anotherFavicon} />
+    <meta property="og:url" content={正規URL} />
+    <meta property="og:site_name" content="Wave Graphics" />
+    <meta property="og:type" content={ogType} />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="/hotlink-ok/icons/favicon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@wing__0902" />
     <meta name="twitter:domain" content="wave.graphics" />
     <meta property="twitter:title" content={title} />
