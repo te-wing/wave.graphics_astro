@@ -22,6 +22,7 @@ const titleOnHeader = entry.data.title + " | Wave Graphics"
 <HeaderLayout
   title={titleOnHeader}
   description={entry.data.description}
+  ogType='article'
 >
   <div class="link">
     {entry.data.pairName && <a href={`/wave/${entry.data.pairPath}/`}>{entry.data.pairName}へ＞</a>}
