@@ -6,6 +6,9 @@
   onMounted(() => {
     new PagefindUI({
       element: ".search",
+      showSubResults: true,
+      url: true,
+      pageSize: 8,
     });
   });
 </script>
