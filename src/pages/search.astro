@@ -10,5 +10,13 @@ import SearchSlot from "../components/SearchUI/SearchSlot.vue";
   <noscript>
     <p>JavaScriptが無効です．検索ボックスはご利用いただけません．</p>
   </noscript>
-  <SearchSlot client:load />
+  <div class="searchSlot">
+    <SearchSlot client:load />
+  </div>
 </HeaderLayout>
+
+<style lang="scss">
+  .searchSlot {
+    min-height: 200px;
+  }
+</style>
