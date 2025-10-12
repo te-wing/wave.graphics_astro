@@ -1,6 +1,6 @@
 <template>
   <button v-show="showButton" @click="returnTop" class="back-to-top">
-    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=currentColor>
+    <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill=currentColor>
       <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
     </svg>
   </button>
@@ -50,5 +50,7 @@
     justify-content: center;
     border-radius: 16px;
     backdrop-filter: blur(3px);
+    border-color: var(--a-default);
+    border-width: 2px;
   }
 </style>
