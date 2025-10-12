@@ -1,6 +1,8 @@
 <template>
   <button v-show="showButton" @click="returnTop" class="back-to-top">
-    Topへ戻る
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill=currentColor>
+      <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/>
+    </svg>
   </button>
 </template>
 
@@ -10,7 +12,7 @@
       return {
         showButton: false,
         scrollPosition: 0,
-        showAtPixel: 100,
+        showAtPixel: 400,
       };
     },
     methods: {
@@ -34,10 +36,19 @@
   };
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
   .back-to-top {
     position: fixed;
     bottom: 20px;
     right: 20px;
+    color: var(--foreground);
+    background-color: var(--background-transparent);
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    backdrop-filter: blur(3px);
   }
 </style>
