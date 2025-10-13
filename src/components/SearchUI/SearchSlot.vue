@@ -19,7 +19,7 @@
   </section>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
   .searchBox {
     .search {
       --pagefind-ui-scale: 1;
