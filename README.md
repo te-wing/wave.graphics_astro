@@ -11,3 +11,4 @@
 - @astrojs/svelte
 - @astrojs/vue
 - Pagefind
+- KaTeX
