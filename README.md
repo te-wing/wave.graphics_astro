@@ -6,14 +6,14 @@
 
 ## 使用している技術
 詳細は，[こちらのページ](https://wave.graphics/framework/)をご覧下さい．
-- Astro
-- TypeScript
-- @astrojs/react
-- @astrojs/svelte
-- @astrojs/vue
-- Pagefind
-- KaTeX
-- Sass/SCSS
+- [Astro](https://astro.build)
+- [TypeScript](https://www.typescriptlang.org)
+- @astrojs/[react](https://ja.react.dev)
+- @astrojs/[svelte](https://svelte.jp)
+- @astrojs/[vue](https://ja.vuejs.org)
+- [Pagefind](https://pagefind.app)
+- [KaTeX](https://katex.org)
+- [Sass/SCSS](https://sass-lang.com)
 
 ## デプロイ先
 [Cloudflare Pages](https://pages.dev/)を使用しています．<br>
@@ -27,5 +27,8 @@ pnpm install
 pnpm dev
 ```
 
-プレビューとかは，[localhost:4321](localhost:4321)でできます．
+プレビューとかは，[localhost:4321](http://localhost:4321)でできます．
 
+## 作者
+Wing（wing-0902）  
+[GitHub](https://github.com/wing-0902)
