@@ -28,7 +28,7 @@
 <div>
   {#if pathSegments.length > 0}
     <p>
-      <a href='/'>https://wave.graphics</a>
+      <a href='/'>wave.graphics</a>
       <span>&gt;</span>
       {#each pathSegments as segment, i}
         {#if i > 0}
