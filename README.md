@@ -25,6 +25,7 @@ macOSのターミナルとかで動作確認済みです．
 ```bash
 pnpm install
 pnpm dev
+```
 
-
+プレビューとかは，[localhost:4321](localhost:4321)でできます．
 
